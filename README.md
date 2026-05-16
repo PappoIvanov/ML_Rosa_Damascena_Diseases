@@ -30,9 +30,9 @@ into a unified decision-support pipeline.
 ## Hypotheses
 
 **H1 — Image Classification:**
-A CNN model with MobileNet transfer learning will achieve greater than 80% classification
-accuracy across 8 target classes (4 fungal diseases, Rose Mosaic Virus, 2 insect damage
-classes, healthy) on Rosa damascena leaf images from combined public and field datasets.
+A CNN model with transfer learning will achieve greater than 80% classification
+accuracy across 7 target classes (4 fungal diseases, Rose Mosaic Virus, insect damage,
+healthy) on Rosa damascena leaf images from combined public and field datasets.
 
 **H2 — Weather-Based Risk Prediction:**
 Temperature, relative humidity, and precipitation recorded in the 7 days prior to
@@ -83,18 +83,19 @@ spraying schedule, while maintaining disease control effectiveness.
 
 ## Methodology
 
-The project is structured as a sequential pipeline across 8 notebooks:
+The project is structured as a sequential pipeline across 9 notebooks:
 
 | Notebook | Platform | Description |
 |---|---|---|
-| 01_data_preparation | Jupyter | API data download; image preprocessing (YOLO conversion, deduplication, resizing) |
-| 02_dataset_evaluation | Jupyter | Image quality assessment (blur detection, resolution, duplicate analysis) |
-| 03_eda | Jupyter | Exploratory analysis of all datasets |
-| 04_traditional_ml | Google Colab | Logistic Regression and SVM from scratch (gradient descent, kernel functions) |
-| 05_neural_network_scratch | Google Colab | Neural network from scratch using NumPy (backpropagation, chain rule) |
-| 06_cnn_transfer_learning | Google Colab | CNN with MobileNet fine-tuning (transfer learning) |
-| 07_weather_risk | Google Colab | Tabular ML: weather → disease risk prediction |
-| 08_mlflow | Google Colab | Experiment tracking and model comparison |
+| 01_data_preparation | Jupyter | API data download (weather, GBIF occurrence records) |
+| 02_image_preprocessing | Jupyter | Image pipeline: YOLO conversion, deduplication, quality filtering, split, resize |
+| 03_dataset_evaluation | Jupyter | Image quality assessment (blur detection, resolution, duplicate analysis) |
+| 04_eda | Jupyter | Exploratory analysis of all datasets |
+| 05_traditional_ml | Google Colab | Logistic Regression and SVM from scratch (gradient descent, kernel functions) |
+| 06_neural_network_scratch | Google Colab | Neural network from scratch using NumPy (backpropagation, chain rule) |
+| 07_cnn_transfer_learning | Google Colab | CNN with transfer learning fine-tuning |
+| 08_weather_risk | Google Colab | Tabular ML: weather → disease risk prediction |
+| 09_mlflow | Google Colab | Experiment tracking and model comparison |
 
 ---
 
@@ -129,14 +130,15 @@ ML_Rosa_Damascena_Diseases/
 
 ## Current Status
 
-- [x] 01_data_preparation.ipynb — API data downloaded; image preprocessing in progress
-- [x] 02_dataset_evaluation.ipynb — complete
-- [ ] 03_eda.ipynb
-- [ ] 04_traditional_ml.ipynb
-- [ ] 05_neural_network_scratch.ipynb
-- [ ] 06_cnn_transfer_learning.ipynb
-- [ ] 07_weather_risk.ipynb
-- [ ] 08_mlflow.ipynb
+- [x] 01_data_preparation.ipynb — complete
+- [x] 02_image_preprocessing.ipynb — complete
+- [x] 03_dataset_evaluation.ipynb — complete
+- [ ] 04_eda.ipynb
+- [ ] 05_traditional_ml.ipynb
+- [ ] 06_neural_network_scratch.ipynb
+- [ ] 07_cnn_transfer_learning.ipynb
+- [ ] 08_weather_risk.ipynb
+- [ ] 09_mlflow.ipynb
 
 ---
 
@@ -182,7 +184,7 @@ https://doi.org/10.5281/zenodo.7970649
 
 ### Biodiversity Data
 
-[7] GBIF.org. *Global Biodiversity Information Facility*. Accessed 2025.  
+[7] GBIF.org. *Global Biodiversity Information Facility*. Accessed 2026.  
 https://www.gbif.org
 
 ### Literature

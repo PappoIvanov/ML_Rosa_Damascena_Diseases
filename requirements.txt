@@ -1,0 +1,21 @@
+# Core
+numpy
+pandas
+matplotlib
+requests
+
+
+# Image processing
+opencv-python
+
+# Dataset inspection
+pyyaml
+
+# Visualization
+seaborn
+
+# Machine learning
+scikit-learn
+
+# Experiment tracking
+mlflow
