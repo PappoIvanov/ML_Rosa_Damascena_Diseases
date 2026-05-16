@@ -1,6 +1,7 @@
 project_notes.md
 datasets/
 data/
+!data/raw/
 !data/raw/weather/
 !data/raw/gbif/
 !data/processed/*.csv
