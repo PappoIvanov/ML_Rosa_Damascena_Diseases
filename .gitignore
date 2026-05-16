@@ -1,4 +1,5 @@
 project_notes.md
+.ipynb_checkpoints/
 datasets/
 data/
 !data/raw/
