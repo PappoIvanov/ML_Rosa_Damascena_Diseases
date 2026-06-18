@@ -119,6 +119,25 @@ ML_Rosa_Damascena_Diseases/
 
 ---
 
+## Trained Models
+
+Trained model artifacts are stored in a publicly accessible Google Drive
+folder (which mirrors the `models/` and `notebooks/` directories):
+
+**[Google Drive — models & notebooks](https://drive.google.com/drive/u/0/folders/1u0m8t8rpi_6xJiPNJd0XbICq5Bx_UcLH)**
+
+The repository tracks the small artifacts needed to reproduce the model
+comparison in notebook 09 (test predictions, probabilities, and training
+histories). The full fine-tuned CNN weights are **not committed to git**
+because of their size:
+
+- `07_cnn_efficientnetb3_final.keras` (~45 MB) — available on Google Drive only.
+
+All other artifacts (e.g. `06_nn_*.npz`, `*_test_predictions.npz`,
+`*_history*.json`) are committed under `models/`.
+
+---
+
 ## Field Site
 
 - **Location:** Krasnovo, Plovdiv Province, Bulgaria
@@ -133,10 +152,10 @@ ML_Rosa_Damascena_Diseases/
 - [x] 01_data_preparation.ipynb — complete
 - [x] 02_image_preprocessing.ipynb — complete
 - [x] 03_dataset_evaluation.ipynb — complete
-- [ ] 04_eda.ipynb
-- [ ] 05_traditional_ml.ipynb
-- [ ] 06_neural_network_scratch.ipynb
-- [ ] 07_cnn_transfer_learning.ipynb
+- [x] 04_eda.ipynb — complete
+- [x] 05_traditional_ml.ipynb — complete
+- [x] 06_neural_network_scratch.ipynb — complete
+- [x] 07_cnn_transfer_learning.ipynb — complete (CNN test accuracy 0.9822, macro F1 0.9853)
 - [ ] 08_weather_risk.ipynb
 - [ ] 09_mlflow.ipynb
 

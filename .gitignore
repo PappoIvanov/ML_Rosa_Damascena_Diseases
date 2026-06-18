@@ -6,3 +6,6 @@ data/
 !data/raw/weather/
 !data/raw/gbif/
 !data/processed/*.csv
+
+# Large trained models are kept on Google Drive, not in git (see README).
+models/*.keras
