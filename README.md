@@ -83,7 +83,8 @@ spraying schedule, while maintaining disease control effectiveness.
 
 ## Methodology
 
-The project is structured as a sequential pipeline across 9 notebooks:
+The project is structured as a sequential pipeline across 9 core notebooks,
+plus an optional field-test notebook:
 
 | Notebook | Platform | Description |
 |---|---|---|
@@ -93,9 +94,10 @@ The project is structured as a sequential pipeline across 9 notebooks:
 | 04_eda | Jupyter | Exploratory analysis of all datasets |
 | 05_traditional_ml | Google Colab | Logistic Regression and SVM from scratch (gradient descent, kernel functions) |
 | 06_neural_network_scratch | Google Colab | Neural network from scratch using NumPy (backpropagation, chain rule) |
-| 07_cnn_transfer_learning | Google Colab | CNN with transfer learning fine-tuning |
-| 08_weather_risk | Google Colab | Tabular ML: weather → disease risk prediction |
-| 09_mlflow | Google Colab | Experiment tracking and model comparison |
+| 07_cnn_transfer_learning | Google Colab | CNN with transfer learning fine-tuning (EfficientNetB3) |
+| 08_weather_risk | Local (VS Code) | Tabular ML: weather → disease risk prediction |
+| 09_mlflow | Local (VS Code) | Experiment tracking and model comparison |
+| 10_field_test (optional) | TBD | Real-world test of the CNN on personal field photos |
 
 ---
 
@@ -161,7 +163,8 @@ are committed under `models/`.
 - [x] 06_neural_network_scratch.ipynb — complete
 - [x] 07_cnn_transfer_learning.ipynb — complete (CNN test accuracy 0.9822, macro F1 0.9853)
 - [x] 08_weather_risk.ipynb — complete (per-disease risk regression, test R² 0.76–0.85)
-- [ ] 09_mlflow.ipynb
+- [x] 09_mlflow.ipynb — complete (MLflow tracking; two experiments, 5 + 9 runs)
+- [ ] 10_field_test.ipynb — optional (CNN on personal field photos)
 
 ---
 
