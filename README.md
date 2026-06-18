@@ -132,9 +132,13 @@ histories). The full fine-tuned CNN weights are **not committed to git**
 because of their size:
 
 - `07_cnn_efficientnetb3_final.keras` (~45 MB) — available on Google Drive only.
+- `08_*_RandomForest.joblib` (~5.5 MB each) — the weather-risk RandomForest
+  models; available on Google Drive only. Their test predictions and metrics
+  are committed, so the comparison in notebook 09 is fully reproducible.
 
-All other artifacts (e.g. `06_nn_*.npz`, `*_test_predictions.npz`,
-`*_history*.json`) are committed under `models/`.
+All other artifacts (e.g. `06_nn_*.npz`, `08_*_GradientBoosting.joblib`,
+`*_test_predictions.npz`, `*_history*.json`, `08_weather_risk_results.json`)
+are committed under `models/`.
 
 ---
 
@@ -156,7 +160,7 @@ All other artifacts (e.g. `06_nn_*.npz`, `*_test_predictions.npz`,
 - [x] 05_traditional_ml.ipynb — complete
 - [x] 06_neural_network_scratch.ipynb — complete
 - [x] 07_cnn_transfer_learning.ipynb — complete (CNN test accuracy 0.9822, macro F1 0.9853)
-- [ ] 08_weather_risk.ipynb
+- [x] 08_weather_risk.ipynb — complete (per-disease risk regression, test R² 0.76–0.85)
 - [ ] 09_mlflow.ipynb
 
 ---

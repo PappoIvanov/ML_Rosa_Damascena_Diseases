@@ -9,3 +9,4 @@ data/
 
 # Large trained models are kept on Google Drive, not in git (see README).
 models/*.keras
+models/*_RandomForest.joblib

@@ -1,0 +1,126 @@
+{
+  "diseases": [
+    "rose_rust",
+    "black_spot",
+    "powdery_mildew"
+  ],
+  "feature_cols": [
+    "temperature_2m_mean",
+    "relative_humidity_2m_mean",
+    "precipitation_sum",
+    "wind_speed_10m_max",
+    "temp_roll7",
+    "humidity_roll7",
+    "precip_roll7",
+    "wind_roll7",
+    "precip_sum14",
+    "temp_trend14",
+    "humidity_trend14"
+  ],
+  "model_names": [
+    "Ridge",
+    "RandomForest",
+    "GradientBoosting"
+  ],
+  "best_model": {
+    "rose_rust": "GradientBoosting",
+    "black_spot": "GradientBoosting",
+    "powdery_mildew": "RandomForest"
+  },
+  "train_years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022
+  ],
+  "test_years": [
+    2023,
+    2024
+  ],
+  "risk_index": {
+    "rose_rust": {
+      "1": 0.0142,
+      "2": 0.0071,
+      "3": 0.0107,
+      "4": 0.1548,
+      "5": 0.9164,
+      "6": 1.0,
+      "7": 0.6406,
+      "8": 0.7633,
+      "9": 0.7491,
+      "10": 0.4128,
+      "11": 0.1495,
+      "12": 0.0356
+    },
+    "black_spot": {
+      "1": 0.0675,
+      "2": 0.0429,
+      "3": 0.0399,
+      "4": 0.1687,
+      "5": 0.4018,
+      "6": 0.5767,
+      "7": 0.681,
+      "8": 0.7209,
+      "9": 1.0,
+      "10": 0.5951,
+      "11": 0.1902,
+      "12": 0.1288
+    },
+    "powdery_mildew": {
+      "1": 0.0393,
+      "2": 0.0224,
+      "3": 0.0365,
+      "4": 0.1052,
+      "5": 0.2468,
+      "6": 0.3506,
+      "7": 0.5231,
+      "8": 0.6325,
+      "9": 1.0,
+      "10": 0.4376,
+      "11": 0.0954,
+      "12": 0.0435
+    }
+  },
+  "results": {
+    "rose_rust__Ridge": {
+      "r2": 0.6723,
+      "mae": 0.1694
+    },
+    "rose_rust__RandomForest": {
+      "r2": 0.7576,
+      "mae": 0.1057
+    },
+    "rose_rust__GradientBoosting": {
+      "r2": 0.763,
+      "mae": 0.1149
+    },
+    "black_spot__Ridge": {
+      "r2": 0.779,
+      "mae": 0.1117
+    },
+    "black_spot__RandomForest": {
+      "r2": 0.833,
+      "mae": 0.0847
+    },
+    "black_spot__GradientBoosting": {
+      "r2": 0.8494,
+      "mae": 0.0853
+    },
+    "powdery_mildew__Ridge": {
+      "r2": 0.6838,
+      "mae": 0.1178
+    },
+    "powdery_mildew__RandomForest": {
+      "r2": 0.783,
+      "mae": 0.083
+    },
+    "powdery_mildew__GradientBoosting": {
+      "r2": 0.7806,
+      "mae": 0.0903
+    }
+  }
+}
