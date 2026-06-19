@@ -71,7 +71,7 @@ spraying schedule, while maintaining disease control effectiveness.
 | Multifaceted Rose Leaf Disease Dataset | Mendeley | 13,306 | Classification |
 | rose leaf diseases.v4i.yolov11 | Roboflow | 3,702 | YOLO → converted |
 | rose leaf detection.v1i.yolov11 | Roboflow | 2,174 | YOLO → converted |
-| **Personal field dataset** | Krasnovo farm, Plovdiv Province | in progress | Classification |
+| **Personal field dataset** | Krasnovo farm, Plovdiv Province | 49 photos | Field test (NB 10) |
 
 ### Tabular Data
 | Dataset | Source | Records | Description |
@@ -97,13 +97,36 @@ plus an optional field-test notebook:
 | 07_cnn_transfer_learning | Google Colab | CNN with transfer learning fine-tuning (EfficientNetB3) |
 | 08_weather_risk | Local (VS Code) | Tabular ML: weather → disease risk prediction |
 | 09_mlflow | Local (VS Code) | Experiment tracking and model comparison |
-| 10_field_test (optional) | TBD | Real-world test of the CNN on personal field photos |
+| 10_field_test (optional) | Local (VS Code) | Real-world test of the CNN on personal field photos |
+
+---
+
+## Results / Key Findings
+
+| Hypothesis | Outcome |
+|---|---|
+| **H1** — CNN > 80% accuracy on 7 classes | **Confirmed.** CNN EfficientNetB3 reached **0.982** test accuracy / **0.985** macro F1 on a held-out 2,580-image test set — far above the 80% target and above the from-scratch baselines (Logistic Regression 0.556, NN + Adam 0.719). |
+| **H2** — weather predicts fungal disease risk | **Supported.** Per-disease risk regressors explain **76–85%** of the seasonal risk variance (test R² 0.76–0.85). The 7-day mean temperature is the dominant predictor, with the 14-day temperature trend as the key secondary signal. |
+| **H3** — combined image + weather recommendation | **Partially addressed.** The decision logic combines the image diagnosis (NB 07) with the weather-risk context (NB 08), but was not benchmarked against a calendar-based spraying schedule — stated as a limitation and future work. |
+
+**Model ladder (image classification):** linear models (LR / SVM ~0.53) → non-linear
+fully-connected NN (~0.70) → CNN with transfer learning (0.98). The gain over the
+from-scratch network comes from spatial structure, colour and resolution — not parameter
+count alone.
+
+**Honest real-world caveat (notebook 10):** the **personal field dataset is minimal (49
+unlabelled photos) and was NOT used for training** — it served only as a qualitative test
+to observe how the model behaves on real field input. On these whole-plant field photos
+the CNN both misreads the disease (a clear rust symptom read as powdery mildew) and does
+so with high confidence. This is **domain shift** — the model was trained on cropped
+single-leaf images, not field shots — and it sets realistic expectations for deployment.
 
 ---
 
 ## Project Structure
 
-ML_Rosa_Damascena_Diseases/
+```
+Machine_Learning_Project/
 ├── data/
 │   ├── raw/
 │   │   ├── weather/
@@ -117,7 +140,7 @@ ML_Rosa_Damascena_Diseases/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
-
+```
 
 ---
 
@@ -153,26 +176,11 @@ are committed under `models/`.
 
 ---
 
-## Current Status
-
-- [x] 01_data_preparation.ipynb — complete
-- [x] 02_image_preprocessing.ipynb — complete
-- [x] 03_dataset_evaluation.ipynb — complete
-- [x] 04_eda.ipynb — complete
-- [x] 05_traditional_ml.ipynb — complete
-- [x] 06_neural_network_scratch.ipynb — complete
-- [x] 07_cnn_transfer_learning.ipynb — complete (CNN test accuracy 0.9822, macro F1 0.9853)
-- [x] 08_weather_risk.ipynb — complete (per-disease risk regression, test R² 0.76–0.85)
-- [x] 09_mlflow.ipynb — complete (MLflow tracking; two experiments, 5 + 9 runs)
-- [ ] 10_field_test.ipynb — optional (CNN on personal field photos)
-
----
-
 ## Requirements
 
 See `requirements.txt` for full dependency list.
 Key libraries: `numpy`, `pandas`, `scikit-learn`, `opencv-python`,
-`matplotlib`, `torch` / `tensorflow`, `mlflow`.
+`matplotlib`, `tensorflow`, `mlflow`.
 
 ---
 
@@ -212,8 +220,4 @@ https://doi.org/10.5281/zenodo.7970649
 
 [7] GBIF.org. *Global Biodiversity Information Facility*. Accessed 2026.  
 https://www.gbif.org
-
-### Literature
-
-*(to be completed as project progresses)*
 

@@ -7,6 +7,7 @@ requests
 
 # Image processing
 opencv-python
+Pillow
 
 # Dataset inspection
 pyyaml
@@ -16,6 +17,9 @@ seaborn
 
 # Machine learning
 scikit-learn
+
+# Deep learning (CNN — notebooks 07 and 10)
+tensorflow
 
 # Experiment tracking
 mlflow
